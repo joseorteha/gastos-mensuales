@@ -1,0 +1,199 @@
+/* Fondo general */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../img/fondo.jpeg') center center / cover no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+
+/* Efecto glassmorphism en el contenedor principal */
+.main-container {
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+    border-radius: 24px;
+    color: white;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.2); /* Sombra suave */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+}
+
+
+/* Estilo de los inputs y textarea con glassmorphism */
+input[type="text"],
+input[type="number"],
+textarea {
+    font-size: 1rem;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3); /* Fondo con opacidad */
+    color: white; /* Cambiar el color del texto ingresado a blanco */
+    backdrop-filter: blur(5px); /* Desenfoque ligero */
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Cambiar el color del placeholder a blanco */
+input::placeholder,
+textarea::placeholder {
+    color: white;
+    opacity: 1; /* Asegurarse de que el placeholder sea completamente visible */
+}
+
+
+/* Estilo del botón */
+button {
+    padding: 10px 40px;
+    width: fit-content;
+    background-color: #1875E8;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Lista de gastos */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: fit-content;
+    overflow-y: auto;
+    width: 100%;
+}
+
+ul li {
+    padding: 10px;
+    background-color: rgba(4, 24, 50, 0.8); /* Fondo oscuro y transparente */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde ligero */
+    display: flex;
+    justify-content: space-between;
+}
+
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* Contenedores */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 45px;
+    align-items: center;
+    padding: 45px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img {
+    width: 50%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo del total */
+.total {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .main-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .img-container img {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .total {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .main-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .img-container img {
+        width: 100%;
+        max-width: 150px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .total {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos Mensuales</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="img-container">
+                <img src="./assets/img/titulo.png" alt="Título">
+            </div>
+            <div class="form-group">
+                <input type="text" id="nombreGasto" placeholder="Nombre del gasto">
+                <input type="number" id="valorGasto" placeholder="Valor del gasto" min="0" step="0.01">
+                <textarea id="descripcionGasto" placeholder="Descripción del gasto"></textarea>
+                <button id="botonFormulario" onclick="clickBoton();">Agregar Gasto</button>
+            </div>
+            <div class="form-group">
+                <select id="moneda" onchange="actualizarMoneda();">
+                    <option value="USD" data-symbol="$" selected>USD (Dólar)</option>
+                    <option value="EUR" data-symbol="€">EUR (Euro)</option>
+                    <option value="MXN" data-symbol="₲">MXN (Peso Mexicano)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="idioma" onchange="actualizarIdioma();">
+                    <option value="es" selected>Español</option>
+                    <option value="en">Inglés</option>
+                    <option value="fr">Francés</option>
+                </select>
+            </div>
+            <button id="imprimirReporte" onclick="imprimirReporte()" style="display: none;">Imprimir Reporte</button>
+
+            <ul id="listaDeGastos"></ul>
+            <div class="total">
+                <span id="totalLabel">Total Mensual:</span> <span id="totalGastos">0.00</span>
+            </div>
+        </div>
+    </div>   
+    <script src="assets/js/script.js"></script>
+    <footer>
+        &copy; <span id="year"></span> Jose Ortega. Todos los derechos reservados.
+    </footer>
+    <script>
+        // Mostrar el año actual en el pie de página
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    
+</body>
+
+</html>
