@@ -20,7 +20,7 @@ Este es un proyecto de una aplicación web para controlar los gastos mensuales d
 - **FontAwesome**: Iconos para las acciones de edición y eliminación.
 
 ## Capturas de Pantalla
-![Captura de pantalla](assets/screenshot.png)
+![Captura de pantalla](assets/Captura de pantalla.png)
 
 
 
